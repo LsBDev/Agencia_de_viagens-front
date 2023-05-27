@@ -45,10 +45,9 @@ export default function Home() {
 const Container = styled.div`
   margin-top: 80px;
   background:lightblue;
-  height: 100vh;
-
+  /* height: 100vh; */
+  height: 100%;
 `
-
 const Select = styled.select`
 width: 200px;
 `
