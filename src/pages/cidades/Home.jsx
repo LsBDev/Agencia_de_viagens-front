@@ -10,7 +10,6 @@ export default function Home() {
   const {setSelectCity} = useContext(CityContext)
   const navigate = useNavigate()
 
-
   useEffect(() => {
     const url = "http://localhost:5000/"
     const promise = axios.get(url)

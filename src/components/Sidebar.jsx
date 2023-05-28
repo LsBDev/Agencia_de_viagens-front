@@ -10,13 +10,7 @@ export default function Sidebar({minPrice, maxPrice, setPriceRange}) {
           <p>{minPrice}</p>          
           <input type="range" min={minPrice} max={maxPrice} id="min" onChange={e => setPriceRange(e.target.value)}/>
           <p>{maxPrice}</p>
-        </Range> 
-        {/* <label for="max">Preço Máximo</label> */}
-        {/* <Range>
-          <p>150</p>          
-          <input type="range" min="150" max="200" id="max" onChange={e => setPriceRange(e.target.value)}/> 
-          <p>200</p>       
-        </Range> */}
+        </Range>
       </Side>
   )
 }
