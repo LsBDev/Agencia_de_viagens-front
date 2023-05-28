@@ -45,6 +45,7 @@ export default function Tickets() {
               <Product key={index} onClick={() => selectTicket(item)}>
                 <img src="" alt="" />
                 <p>{item.flight_date}</p>
+                <p>{item.company}</p>
                 <p>{item.destination_city}</p>
                 <p>{item.price}</p>
               </Product>

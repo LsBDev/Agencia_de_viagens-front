@@ -6,8 +6,8 @@ import axios from "axios"
 
 export default function ResumeHosting() {
   const {selectHosting} = useContext(CityContext)
-  const [hosting, setHosting] = useState()
-  console.log(hosting)
+  const [hosting, setHosting] = useState([])
+  // console.log(hosting)
 
 
   useEffect(() => {
@@ -15,37 +15,30 @@ export default function ResumeHosting() {
     const promise = axios.get(url)
     promise
     .then((res) => {
-      console.log(res.data)
-      // setHosting(res.data)
+      setHosting(res.data)
     })
     .catch((err) => console.log(err.message))
   }, [selectHosting])
 
+  if (!hosting[0]) {
+    return(console.log("Loading..."))
+  }
+
   return (
-    // <Container>
-    //   {selectHosting}
-    // </Container>
     <Container>
-      <h1>Passagem de Hospedagem</h1>
-      <Resume>
-        {/* <p>Destino: {hosting.destination_city}</p>
-        <p>Partida: {hosting.departure_city}</p>
-        <p>Companhia: {hosting.company}</p>
-        <p>Hora de partida: {hosting.departure_time}</p>
-        <p>Hora de chegada: {hosting.arrival_time}</p>
-        <p>Preço: {hosting.price}</p> */}
-      </Resume>      
-    <Link to="/hospedagens">Consultar hospedagens</Link>
+      <h1>Passagem de hospedagem</h1>
+      <Photos>
+        {hosting[0].photos.map((p) => (<img src={p.photo_url} alt="lindas fotos"/>))}
+      </Photos>      
+      <Information>
+        <div></div>
+        <div></div>
+      </Information>      
+      <Link to="/hospedagens">Consultar hospedagens</Link>
     </Container>
   )
 }
 
-// const Container = styled.div`
-//   width: 100%;
-//   display: flex;
-//   margin-top: 80px;
-//   background: lightcoral;
-// `
 const Container = styled.div`
   display: flex;
   /* justify-content: center; */
@@ -53,8 +46,8 @@ const Container = styled.div`
   flex-direction: column;
   height: 100vh;
   margin-top: 80px;
-  padding: 100px;
-  background: lightblue;
+  padding: 20px;
+  /* background: lightblue; */
   h1 {
     font-size: 40px;
     font-weight: bold;
@@ -65,11 +58,24 @@ const Container = styled.div`
     text-decoration: none;
   }
 `
-const Resume = styled.div`
+const Photos = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 200px;
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  overflow-x: hidden;
+  /* overflow-y: hidden;   */
+`
+
+const Information = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 100px;
+  padding: 50px;
   background: lightcoral;
   p {
     width: 100%;
