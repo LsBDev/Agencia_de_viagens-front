@@ -4,6 +4,7 @@ import axios from "axios"
 import CityContext from "../../context/city.context"
 import { useNavigate } from "react-router-dom"
 import Instruction from "./Intructions"
+import bg1 from "../../assets/bg1.jpeg"
 
 
 export default function Home() {
@@ -26,10 +27,11 @@ export default function Home() {
 
   return (
     <Container>
+      <img src={bg1} alt="Resort"/>
       <Orientation>
-        <Instruction text="1. Escolha a cidade que deseja visitar"/>
-        <Instruction text="2. Veja as passagens disponíveis, com preço e datas"/>
-        <Instruction text="3. Veja os locais aonde você pode se hospedar e todo o conforto que eles oferecem"/>
+        <Instruction text="Escolha a cidade que deseja visitar"/>
+        <Instruction text="Veja as passagens disponíveis, com preço e datas"/>
+        <Instruction text="Veja os locais aonde você pode se hospedar e todo o conforto que eles oferecem"/>
       </Orientation>
       <Form onSubmit={getCity}>
         <Select onChange={e => setSelectCity(e.target.value)}>
@@ -38,7 +40,7 @@ export default function Home() {
             <option key={index} value={city.id}>{city.name}</option>
           )}
         </Select>
-        <button type="submit">Viajar</button>
+        <button type="submit">CONSULTAR</button>
       </Form>      
     </Container>
   )
@@ -50,8 +52,13 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 80px;
-  background: lightblue;
   height: 100vh;
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -2;
+  }
 `
 const Form = styled.form`
   display: flex;
@@ -78,7 +85,8 @@ const Orientation = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 900px;
-  height: 300px;
-  /* background: lightcyan; */
+  padding: 30px;
+  gap: 30px;
+  /* max-width: 900px; */
+  /* height: 300px; */
 `

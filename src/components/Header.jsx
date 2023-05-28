@@ -1,29 +1,30 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import Logo from "./../assets/Logo2.png"
 
 
 export default function Header() {
   return (
-    <Top>
-      <h1>Viagens Alucinantes</h1>
-      <Link to="/">Voltar</Link>
+    <Top>      
+      <Link to="/"><img src={Logo} alt="Logo" /></Link>
+      <Link to="/hospedagens">Consultar hospedagens</Link>
     </Top>
   )
 }
 
 const Top = styled.header`
+  display: flex;
+  align-items: center;
   width: 100%;
   top: 0;
   background: white;
   display: flex;
   justify-content: space-between;
-  height: 80px;
   position: fixed;
-  padding: 20px;
+  padding: 20px 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  h1 {
-    font-size: 30px;
-    font-weight: 400;
-    font-weight: bolder;
+  img {
+    width: 120px;
+    height: 65px;
   }
 `

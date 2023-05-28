@@ -3,7 +3,10 @@ import { useContext, useEffect, useState } from "react"
 import CityContext from "../../context/city.context"
 import axios from "axios"
 import Sidebar from "../../components/Sidebar"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import aviao from "../../assets/Aviao1.png"
+import bg2 from "../../assets/bg2.jpg"
+
 
 export default function Tickets() {
   const {selectCity, setFlight} = useContext(CityContext)
@@ -37,13 +40,14 @@ export default function Tickets() {
 
   return (
     <Container>
+      <Background src={bg2} alt="Torre Eiffel" />
       <Sidebar minPrice={minPrice} maxPrice={maxPrice} setPriceRange={setPriceRange} />
       <Main>
         {tickets.map((item, index) => {
           if(item.price <= priceRange) {
             return (
               <Product key={index} onClick={() => selectTicket(item)}>
-                <img src="" alt="" />
+                <img src={aviao} alt="Avião" />
                 <p>{item.flight_date}</p>
                 <p>{item.company}</p>
                 <p>{item.destination_city}</p>
@@ -52,7 +56,6 @@ export default function Tickets() {
             )
           }}          
         )}
-        <Link to="/hospedagens">Consultar hospedagens</Link>
       </Main>
     </Container>
      
@@ -64,23 +67,44 @@ const Container = styled.div`
   display: flex;
   margin-top: 80px;
   height: 100vh;
-  background: lightcoral;
+`
+const Background = styled.img`
+  width: 100vw;
+  height: 100vh;
+  opacity: 80%;
+  position: absolute;
+  z-index: -2;
 `
 const Main =styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 100px 50px ;
   justify-content: space-around;
-  background: lightblue;
+  a {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    text-decoration: none;
+    color: black;
+    background: lightcoral;
+  }
+  p {
+    font-size: 20px;
+    line-height: 25px;
+    width: 100%;
+  }
 `
 const Product = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 250px;
+  height: 300px;
+  padding: 0 20px;
   border: 1px solid black;
   border-radius: 10px;
-  background: lightpink;
+  background: #946a5a;
 `

@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import CityContext from "../../context/city.context"
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 export default function ResumeTicket() {
   const {flight} = useContext(CityContext)
@@ -9,7 +9,7 @@ export default function ResumeTicket() {
 
   return (
     <Container>
-      <h1>Passagem para a CIDADE</h1>
+      <h1>Passagem para a {flight.destination_city}</h1>
       <Resume>
         <p>Destino: {flight.destination_city}</p>
         <p>Partida: {flight.departure_city}</p>
@@ -18,23 +18,22 @@ export default function ResumeTicket() {
         <p>Hora de chegada: {flight.arrival_time}</p>
         <p>Preço: {flight.price}</p>
       </Resume>      
-    <Link to="/hospedagens">Consultar hospedagens</Link>
+    {/* <Link to="/hospedagens">Consultar hospedagens</Link> */}
     </Container>
   )
 }
 
 const Container = styled.div`
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   height: 100vh;
   margin-top: 80px;
   padding: 100px;
-  background: lightblue;
+  background:  #ff520de8;
   h1 {
     font-size: 40px;
-    font-weight: bold;
+    font-family: 'roboto';
     margin: 50px;
   }
   a {
@@ -47,9 +46,12 @@ const Resume = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   padding: 100px;
-  background: lightcoral;
+  border-radius: 10px;
+  background: #946a5a;
   p {
     width: 100%;
+    font-family: 'Roboto';
+    line-height: 50px;
     text-align: start;
     font-size: 30px;
     font-weight: 300;

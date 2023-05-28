@@ -4,6 +4,8 @@ import { useContext, useEffect, useState } from "react"
 import CityContext from "../../context/city.context"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import hotel from "../../assets/Hotel.png"
+import bg3 from "../../assets/bg3.jpg"
 
 
 export default function Hosting() {
@@ -14,7 +16,6 @@ export default function Hosting() {
   const [maxPrice, setMaxPrice] = useState()
   const [priceRange, setPriceRange] = useState()
  
-  // console.log(hosting)
 
   useEffect(() => {
     const url = `http://localhost:5000/accommodation/city/${selectCity}`
@@ -37,6 +38,7 @@ export default function Hosting() {
 
   return (
     <Container>
+    <Background src={bg3} alt="Recepção" />
     <Sidebar  minPrice={minPrice} maxPrice={maxPrice} setPriceRange={setPriceRange} />
     <Main>
     {
@@ -44,7 +46,7 @@ export default function Hosting() {
         if(item.price <= priceRange) {
           return (
             <Product key={index} onClick={() => selectHosting(item)}>
-              <img src="" alt=""/>
+              <img src={hotel} alt="Hotel logo"/>
               <p>{item.name}</p>
               <p>{item.price}</p>
             </Product>
@@ -61,16 +63,24 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   margin-top: 80px;
-  background: lightcoral;
+`
+const Background = styled.img`
+  width: 100vw;
+  height: 100vh;
+  opacity: 80%;
+  position: absolute;
+  z-index: -2;
 `
 const Main =styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 100px 50px;
   justify-content: space-around;
-  background: lightblue;
 `
+
 
 const Product = styled.div`
   display: flex;
@@ -78,8 +88,9 @@ const Product = styled.div`
   justify-content: center;
   align-items: center;
   width: 200px;
-  height: 250px;
+  height: 300px;
+  padding: 0 40px;
   border: 1px solid black;
   border-radius: 10px;
-  background: lightpink;
+  background: #946a5a;
 `

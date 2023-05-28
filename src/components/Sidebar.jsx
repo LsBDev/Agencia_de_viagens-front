@@ -5,7 +5,7 @@ export default function Sidebar({minPrice, maxPrice, setPriceRange}) {
 
   return (
     <Side>
-      <label for="min">Preço</label>
+      <label for="min">Filtro de Preços</label>
       <Range>
         <p>{minPrice}</p>          
         <input type="range" min={minPrice} max={maxPrice} id="min" onChange={e => setPriceRange(e.target.value)}/>
@@ -18,8 +18,9 @@ export default function Sidebar({minPrice, maxPrice, setPriceRange}) {
 const Side = styled.div`
   display: flex;
   flex-direction: column;
-  background: #b9b9b9;
-  padding: 30px;
+  background: #ff520de8;
+  padding: 100px 30px;
+  border: 1px solid black;
   label {
     width: 100%;
     font-weight: bolder;

@@ -41,13 +41,11 @@ export default function ResumeHosting() {
 
 const Container = styled.div`
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   height: 100vh;
   margin-top: 80px;
   padding: 20px;
-  /* background: lightblue; */
   h1 {
     font-size: 40px;
     font-weight: bold;
