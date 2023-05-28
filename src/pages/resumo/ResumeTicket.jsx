@@ -10,12 +10,14 @@ export default function ResumeTicket() {
   return (
     <Container>
       <h1>Passagem para a CIDADE</h1>
-      <p>{flight.destination_city}</p>
-      <p>{flight.departure_city}</p>
-      <p>{flight.company}</p>
-      <p>{flight.departure_time}</p>
-      <p>{flight.arrival_time}</p>
-      <p>{flight.price}</p>
+      <Resume>
+        <p>Destino: {flight.destination_city}</p>
+        <p>Partida: {flight.departure_city}</p>
+        <p>Companhia: {flight.company}</p>
+        <p>Hora de partida: {flight.departure_time}</p>
+        <p>Hora de chegada: {flight.arrival_time}</p>
+        <p>Preço: {flight.price}</p>
+      </Resume>      
     <Link to="/hospedagens">Consultar hospedagens</Link>
     </Container>
   )
@@ -23,10 +25,33 @@ export default function ResumeTicket() {
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
+  height: 100vh;
   margin-top: 80px;
+  padding: 100px;
   background: lightblue;
-  height: 300px;
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 50px;
+  }
+  a {
+    font-size: 30px;
+    text-decoration: none;
+  }
+`
+const Resume = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 100px;
+  background: lightcoral;
+  p {
+    width: 100%;
+    text-align: start;
+    font-size: 30px;
+    font-weight: 300;
+  }
 `

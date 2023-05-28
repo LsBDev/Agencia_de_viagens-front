@@ -62,23 +62,24 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   margin-top: 80px;
+  height: 100vh;
   background: lightcoral;
 `
 const Main =styled.div`
-  display: flex;
-  justify-content: space-around;
   width: 100%;
+  display: flex;
+  padding: 100px 50px ;
+  justify-content: space-around;
   background: lightblue;
-  /* height: 100vh; */
-  height: 100%;
 `
 const Product = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 200px;
+  width: 200px;
+  height: 250px;
   border: 1px solid black;
+  border-radius: 10px;
   background: lightpink;
 `
