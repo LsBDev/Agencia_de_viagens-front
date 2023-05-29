@@ -14,7 +14,9 @@ export default function Home() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_API_URL}/`
+    // const url = `${process.env.REACT_APP_API_URL}/`
+    const url = "https://freela-api-lrnc.onrender.com"
+    // const url = "http://localhost:5000/"
     const promise = axios.get(url)
     promise
     .then((res) => setCities(res.data))
@@ -40,7 +42,7 @@ export default function Home() {
         </Orientation>
         <Select onChange={e => setSelectCity(e.target.value)}>
           <optgroup label="Cidades"></optgroup>
-          {cities.map((city, index) => 
+          {cities?.map((city, index) => 
             <option key={index} value={city.id}>{city.name}</option>
           )}
         </Select>

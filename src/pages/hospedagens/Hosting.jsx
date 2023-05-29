@@ -19,6 +19,7 @@ export default function Hosting() {
 
   useEffect(() => {
     const url = `${process.env.REACT_APP_API_URL}/accommodation/city/${selectCity}`
+    // const url = `https://freela-api-lrnc.onrender.com/accommodation/city/${selectCity}`
     const promise = axios.get(url)
     promise
     .then((res) => {
