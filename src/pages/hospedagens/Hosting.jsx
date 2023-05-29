@@ -47,8 +47,8 @@ export default function Hosting() {
           return (
             <Product key={index} onClick={() => selectHosting(item)}>
               <img src={hotel} alt="Hotel logo"/>
-              <p>{item.name}</p>
-              <p>{item.price}</p>
+              <p>Hotel: {item.name}</p>
+              <p>Preço: R$ {item.price},00</p>
             </Product>
           )
         }
@@ -62,7 +62,7 @@ export default function Hosting() {
 const Container = styled.div`
   width: 100%;
   display: flex;
-  margin-top: 80px;
+  padding-top: 105px;
 `
 const Background = styled.img`
   width: 100vw;
@@ -75,22 +75,34 @@ const Main =styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 100px 50px;
+  /* padding: 100px 50px; */
   justify-content: space-around;
 `
-
-
 const Product = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 300px;
-  padding: 0 40px;
-  border: 1px solid black;
-  border-radius: 10px;
-  background: #946a5a;
+  gap: 20px;
+  padding: 25px;
+  background: white;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
+  img {
+    width: 200px;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    color: hsl(20, 100%, 20%);
+  }
+  :hover {
+    scale: 101%;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    transition-property: scale box-shadow;
+    transition: .2s;
+  }
 `

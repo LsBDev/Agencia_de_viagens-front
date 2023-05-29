@@ -28,19 +28,19 @@ export default function Home() {
   return (
     <Container>
       <img src={bg1} alt="Resort"/>
-      <Orientation>
-        <Instruction text="Escolha a cidade que deseja visitar"/>
-        <Instruction text="Veja as passagens disponíveis, com preço e datas"/>
-        <Instruction text="Veja os locais aonde você pode se hospedar e todo o conforto que eles oferecem"/>
-      </Orientation>
       <Form onSubmit={getCity}>
+        <Orientation>
+          <Instruction text="Escolha a cidade que deseja visitar"/>
+          <Instruction text="Veja as passagens disponíveis, com preço e datas"/>
+          <Instruction text="Veja os locais aonde você pode se hospedar e todo o conforto que eles oferecem"/>
+        </Orientation>
         <Select onChange={e => setSelectCity(e.target.value)}>
           <optgroup label="Cidades"></optgroup>
           {cities.map((city, index) => 
             <option key={index} value={city.id}>{city.name}</option>
           )}
         </Select>
-        <button type="submit">CONSULTAR</button>
+        <button type="submit"><p>CONSULTAR</p></button>
       </Form>      
     </Container>
   )
@@ -51,9 +51,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  padding-top: 105px;
   height: 100vh;
   img {
+    object-fit: cover;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -65,16 +66,23 @@ const Form = styled.form`
   width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 60px;
   flex-direction: column;
   button {
     width: 200px;
-    height: 30px;
+    border: none;
     border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
+    background-color: #ff530d;
+    :hover {
+      background-color: hsl(17.355371900826448, 100%, 40%);
+      cursor: pointer;
+    }
   }
 `
 const Select = styled.select`
-  width: 500px;
+  width: 50%;
   padding: 10px;
   border-radius: 10px;
   font-style: italic;
@@ -85,8 +93,5 @@ const Orientation = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 30px;
   gap: 30px;
-  /* max-width: 900px; */
-  /* height: 300px; */
 `

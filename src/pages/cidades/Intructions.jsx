@@ -18,14 +18,11 @@ const Container = styled.div`
   /* max-height: 200px; */
   padding: 20px;
   border: 1px solid #ff530d;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   background: #ff530d;
   opacity: 95%;
-  p {
-    font-size: 25px;
-    font-family: 'Roboto';
+  p {    
     text-align: center;
-    font-style: italic;
     opacity: 100%;
   }
 `

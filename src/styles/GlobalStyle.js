@@ -49,6 +49,15 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  p, h2 {
+    font-family: 'Poppins';
+    font-size: 20px;
+    color: white;
+  }
+  h1 {
+    font-family: 'Poppins';
+    color: white;
+  }
 `
 
 export default GlobalStyle

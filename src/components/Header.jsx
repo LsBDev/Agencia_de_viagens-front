@@ -21,10 +21,10 @@ const Top = styled.header`
   display: flex;
   justify-content: space-between;
   position: fixed;
-  padding: 20px 50px;
+  z-index: 4;
+  padding: 5px 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   img {
     width: 120px;
-    height: 65px;
   }
 `
