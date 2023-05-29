@@ -15,6 +15,7 @@ export default function Hosting() {
   const [minPrice, setMinPrice] = useState()
   const [maxPrice, setMaxPrice] = useState()
   const [priceRange, setPriceRange] = useState()
+  console.log(hosting)
  
 
   useEffect(() => {

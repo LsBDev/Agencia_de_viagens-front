@@ -14,8 +14,8 @@ export default function Home() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // const url = `${process.env.REACT_APP_API_URL}/`
-    const url = "https://freela-api-lrnc.onrender.com"
+    const url = `${process.env.REACT_APP_API_URL}/`
+    // const url = "https://freela-api-lrnc.onrender.com"
     // const url = "http://localhost:5000/"
     const promise = axios.get(url)
     promise
