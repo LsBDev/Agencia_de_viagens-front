@@ -19,7 +19,8 @@ export default function Tickets() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const url = `http://localhost:5000/fly/city/${selectCity}`
+    const url = `${process.env.REACT_APP_API_URL}/fly/city/${selectCity}`
+    // const url = `http://localhost:5000/fly/city/${selectCity}`
     const promise = axios.get(url)
     promise
     .then((res) => {

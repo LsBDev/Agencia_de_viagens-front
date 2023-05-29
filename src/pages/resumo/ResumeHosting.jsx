@@ -6,11 +6,11 @@ import axios from "axios"
 export default function ResumeHosting() {
   const {selectHosting} = useContext(CityContext)
   const [hosting, setHosting] = useState([])
-  console.log(hosting)
+  // console.log(hosting)
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/accommodation/${selectHosting}`
+    const url = `${process.env.REACT_APP_API_URL}/accommodation/${selectHosting}`
     const promise = axios.get(url)
     promise
     .then((res) => {

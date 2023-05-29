@@ -18,7 +18,7 @@ export default function Hosting() {
  
 
   useEffect(() => {
-    const url = `http://localhost:5000/accommodation/city/${selectCity}`
+    const url = `${process.env.REACT_APP_API_URL}/accommodation/city/${selectCity}`
     const promise = axios.get(url)
     promise
     .then((res) => {

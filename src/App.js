@@ -7,7 +7,7 @@ import CityContext from "./context/city.context"
 import { useState } from "react"
 import ResumeTicket from "./pages/resumo/ResumeTicket"
 import ResumeHosting from "./pages/resumo/ResumeHosting"
-import Error from "./pages/erro/Error"
+// import Error from "./pages/erro/Error"
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <Route path="/hospedagens" element={ <Hosting/>}/>
           <Route path="/detalhe/voo" element={ <ResumeTicket/>}/>
           <Route path="/detalhe/hospedagem" element={ <ResumeHosting/>}/>
-          <Route path="*" element={ <Error/>}/>
+          {/* <Route path="*" element={ <Error/>}/> */}
         </Routes>
       </BrowserRouter>
     </CityContext.Provider>
