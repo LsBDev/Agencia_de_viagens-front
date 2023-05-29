@@ -29,7 +29,7 @@ export default function Hosting() {
       setPriceRange(priceList[priceList.length - 1])
       setHosting(res.data)
     })
-    .catch((err) => console.log(err.message))
+    .catch((err) => console.log(err.data.response))
   }, [selectCity])
 
   function selectHosting(item) {
