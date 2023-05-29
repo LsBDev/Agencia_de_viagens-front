@@ -59,7 +59,7 @@ export default function Tickets() {
             )
           }}          
         )}
-      </Main>
+      </Main>    
     </Container>
      
   )
@@ -68,7 +68,6 @@ export default function Tickets() {
 const Container = styled.div`
   width: 100%;
   display: flex;
-  /* margin-top: 80px; */
   padding-top: 105px;
   height: 100vh;
 `

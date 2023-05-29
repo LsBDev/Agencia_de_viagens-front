@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react"
 import CityContext from "../../context/city.context"
-import { Link } from "react-router-dom"
 import styled from "styled-components"
 import axios from "axios"
 
@@ -45,36 +44,40 @@ export default function ResumeHosting() {
           <p>PISCINA: {hosting[0].pool ? "Sim" : "Não"}</p>
         </Product>
       </Information>      
-      <Link to="/hospedagens">Consultar hospedagens</Link>
+      {/* <Link to="/hospedagens">Consultar hospedagens</Link> */}
     </Container>
   )
 }
 
 const Container = styled.div`
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
   height: 100vh;
-  margin-top: 80px;
-  padding: 60px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 105px;
   background:  #ff520de8;
   h1 {
     font-size: 40px;
     margin: 50px;
   }
-  a {
+  /* a {
     font-size: 30px;
     text-decoration: none;
-  }
+  } */
 `
 const Photos = styled.div`
   display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
   gap: 30px;
+  height: 200px;
   width: 80%;
-  overflow-x: scroll;
+  /* overflow-x: hidden; */
   overflow-y: hidden;
   img {
-    /* width: 200px; */
+    width: 150px;
     height: 200px;
   }
 `
@@ -83,11 +86,12 @@ const Information = styled.div`
   width: 100%;
   justify-content: center;
   gap: 30px;
-  /* flex-wrap: wrap; */
   padding: 50px;
 `
+
 const Product = styled.div`
   display: flex;
+  width: 50%;
   flex-direction: column;
   align-items: center;
   gap: 20px;

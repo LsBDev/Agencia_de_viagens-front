@@ -58,6 +58,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins';
     color: white;
   }
+  a {
+    font-family: 'Poppins';
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    color:  hsl(20, 100%, 20%);
+  }
 `
 
 export default GlobalStyle

@@ -1,13 +1,16 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import Logo from "./../assets/Logo2.png"
+import { useContext } from "react"
+import CityContext from "../context/city.context"
 
 
 export default function Header() {
+  const {selectCity} = useContext(CityContext)
   return (
     <Top>      
       <Link to="/"><img src={Logo} alt="Logo" /></Link>
-      <Link to="/hospedagens">Consultar hospedagens</Link>
+      {selectCity  ? <Link to="/hospedagens">Consultar hospedagens</Link> : <></>}
     </Top>
   )
 }

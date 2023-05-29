@@ -1,6 +1,5 @@
 import styled from "styled-components"
 
-
 export default function Sidebar({minPrice, maxPrice, setPriceRange}) {
 
   return (

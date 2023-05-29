@@ -11,7 +11,7 @@ import Error from "./pages/erro/Error"
 
 
 function App() {
-  const [selectCity, setSelectCity] = useState(1)
+  const [selectCity, setSelectCity] = useState()
   const [selectHosting, setSelectHosting] = useState()
   const [flight, setFlight] = useState({})
 
