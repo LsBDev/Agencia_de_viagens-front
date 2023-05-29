@@ -6,7 +6,6 @@ import axios from "axios"
 export default function ResumeHosting() {
   const {selectHosting} = useContext(CityContext)
   const [hosting, setHosting] = useState([])
-  // console.log(hosting)
 
 
   useEffect(() => {

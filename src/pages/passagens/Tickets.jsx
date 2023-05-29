@@ -20,7 +20,6 @@ export default function Tickets() {
 
   useEffect(() => {
     const url = `${process.env.REACT_APP_API_URL}/fly/city/${selectCity}`
-    // const url = `http://localhost:5000/fly/city/${selectCity}`
     const promise = axios.get(url)
     promise
     .then((res) => {

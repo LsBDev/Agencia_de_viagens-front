@@ -12,10 +12,9 @@ export default function Home() {
   const [cities, setCities] = useState([])
   const {setSelectCity} = useContext(CityContext)
   const navigate = useNavigate()
-  // process.env.REACT_APP_API_URL
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_API_URL}`
+    const url = `${process.env.REACT_APP_API_URL}/`
     const promise = axios.get(url)
     promise
     .then((res) => setCities(res.data))

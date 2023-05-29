@@ -5,7 +5,6 @@ import poltrona from "../../assets/Poltronas.jpeg"
 
 export default function ResumeTicket() {
   const {flight} = useContext(CityContext)
-  // console.log(flight)
 
   return (
     <Container>
