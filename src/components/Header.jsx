@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <Top>      
       <Link to="/"><img src={Logo} alt="Logo" /></Link>
-      {selectCity  ? <Link to="/hospedagens">Consultar hospedagens</Link> : <></>}
+      {selectCity ? <Link to="/hospedagens">Consultar hospedagens</Link> : <></>}
     </Top>
   )
 }

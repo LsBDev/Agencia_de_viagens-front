@@ -62,19 +62,13 @@ const Container = styled.div`
     font-size: 40px;
     margin: 50px;
   }
-  /* a {
-    font-size: 30px;
-    text-decoration: none;
-  } */
 `
 const Photos = styled.div`
   display: flex;
   justify-content: center;
-  /* flex-wrap: wrap; */
   gap: 30px;
   height: 200px;
   width: 80%;
-  /* overflow-x: hidden; */
   overflow-y: hidden;
   img {
     width: 150px;
@@ -83,7 +77,7 @@ const Photos = styled.div`
 `
 const Information = styled.div`
   display: flex;
-  width: 100%;
+  width: 60%;
   justify-content: center;
   gap: 30px;
   padding: 50px;

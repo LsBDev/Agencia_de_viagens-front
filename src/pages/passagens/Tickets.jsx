@@ -18,8 +18,6 @@ export default function Tickets() {
 
   const navigate = useNavigate()
 
-  console.log(priceRange)
-
   useEffect(() => {
     const url = `http://localhost:5000/fly/city/${selectCity}`
     const promise = axios.get(url)
