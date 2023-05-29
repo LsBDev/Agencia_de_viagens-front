@@ -43,7 +43,7 @@ export default function Hosting() {
     <Sidebar  minPrice={minPrice} maxPrice={maxPrice} setPriceRange={setPriceRange} />
     <Main>
     {
-      hosting.map((item, index) => {
+      hosting?.map((item, index) => {
         if(item.price <= priceRange) {
           return (
             <Product key={index} onClick={() => selectHosting(item)}>
