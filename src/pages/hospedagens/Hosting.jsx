@@ -19,8 +19,8 @@ export default function Hosting() {
  
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_API_URL}/accommodation/city/${selectCity}`
-    // const url = `https://freela-api-lrnc.onrender.com/accommodation/city/${selectCity}`
+    // const url = `${process.env.REACT_APP_API_URL}/accommodation/city/${selectCity}`
+    const url = `https://freela-api-lrnc.onrender.com/accommodation/city/${selectCity}`
     const promise = axios.get(url)
     promise
     .then((res) => {
@@ -30,7 +30,7 @@ export default function Hosting() {
       setPriceRange(priceList[priceList.length - 1])
       setHosting(res.data)
     })
-    .catch((err) => console.log(err.response))
+    .catch((err) => console.log(err))
   }, [selectCity])
 
   function selectHosting(item) {

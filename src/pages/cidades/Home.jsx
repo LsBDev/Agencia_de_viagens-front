@@ -14,13 +14,12 @@ export default function Home() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_API_URL}/`
-    // const url = "https://freela-api-lrnc.onrender.com"
-    // const url = "http://localhost:5000/"
+    // const url = `${process.env.REACT_APP_API_URL}/`
+    const url = "https://freela-api-lrnc.onrender.com/"
     const promise = axios.get(url)
     promise
     .then((res) => setCities(res.data))
-    .catch((err) => console.log(err.response.message))
+    .catch((err) => console.log(err))
   }, [])
 
   function getCity(event) {

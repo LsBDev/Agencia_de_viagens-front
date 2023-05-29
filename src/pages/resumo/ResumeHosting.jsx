@@ -9,14 +9,14 @@ export default function ResumeHosting() {
 
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_API_URL}/accommodation/${selectHosting}`
-    // const url = `https://freela-api-lrnc.onrender.com/accommodation/${selectHosting}`
+    // const url = `${process.env.REACT_APP_API_URL}/accommodation/${selectHosting}`
+    const url = `https://freela-api-lrnc.onrender.com/accommodation/${selectHosting}`
     const promise = axios.get(url)
     promise
     .then((res) => {
       setHosting(res.data)
     })
-    .catch((err) => console.log(err.message))
+    .catch((err) => console.log(err))
   }, [selectHosting])
 
   if (!hosting[0]) {

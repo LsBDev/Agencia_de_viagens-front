@@ -19,8 +19,8 @@ export default function Tickets() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_API_URL}/fly/city/${selectCity}`
-    // const url = `https://freela-api-lrnc.onrender.com/fly/city/${selectCity}`
+    // const url = `${process.env.REACT_APP_API_URL}/fly/city/${selectCity}`
+    const url = `https://freela-api-lrnc.onrender.com/fly/city/${selectCity}`
     const promise = axios.get(url)
     promise
     .then((res) => {
@@ -30,7 +30,7 @@ export default function Tickets() {
       setPriceRange(priceList[priceList.length - 1])
       setTickets(res.data)   
     })
-    .catch((err) => console.log(err.message))
+    .catch((err) => console.log(err))
   }, [selectCity])
 
   function selectTicket(item) {
