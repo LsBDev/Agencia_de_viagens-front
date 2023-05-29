@@ -7,10 +7,12 @@ import Instruction from "./Intructions"
 import bg1 from "../../assets/bg1.jpeg"
 
 
+
 export default function Home() {
   const [cities, setCities] = useState([])
   const {setSelectCity} = useContext(CityContext)
   const navigate = useNavigate()
+  // process.env.REACT_APP_API_URL
 
   useEffect(() => {
     const url = `${process.env.REACT_APP_API_URL}`
@@ -23,6 +25,9 @@ export default function Home() {
   function getCity(event) {
     event.preventDefault()    
     navigate("/passagens")
+  }
+  if(cities === []) {
+    return console.log("Loading...")
   }
 
   return (
