@@ -15,11 +15,12 @@ export default function Sidebar({minPrice, maxPrice, setPriceRange}) {
 }
 
 const Side = styled.div`
+  position: fixed;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: #ff520de8;
-  padding: 100px 30px;
+  height: 100%;
+  background: rgba(255, 82, 13, 0.90);
+  padding: 100px 20px;
   border: 1px solid black;
   label {
     width: 100%;

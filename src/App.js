@@ -11,7 +11,7 @@ import ResumeHosting from "./pages/resumo/ResumeHosting"
 
 
 function App() {
-  const [selectCity, setSelectCity] = useState()
+  const [selectCity, setSelectCity] = useState(1)
   const [selectHosting, setSelectHosting] = useState()
   const [flight, setFlight] = useState({})
 

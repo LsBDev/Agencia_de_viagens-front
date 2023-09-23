@@ -40,8 +40,8 @@ export default function Home() {
       <Form onSubmit={getCity}>
         <Orientation>
           <Instruction text="Escolha a cidade que deseja visitar"/>
-          <Instruction text="Veja as passagens disponíveis, com preço e datas"/>
-          <Instruction text="Veja os locais aonde você pode se hospedar e todo o conforto que eles oferecem"/>
+          <Instruction text="Consulte as passagens disponíveis, com preço e datas"/>
+          <Instruction text="Consulte hospedagens e todo o conforto que eles oferecem"/>
         </Orientation>
         <Select onChange={e => setSelectCity(e.target.value)}>
           <optgroup label="Cidades"></optgroup>

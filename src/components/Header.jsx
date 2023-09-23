@@ -6,11 +6,11 @@ import CityContext from "../context/city.context"
 
 
 export default function Header() {
-  const {selectCity} = useContext(CityContext)
+  const {selectCity, setSelectCity} = useContext(CityContext)
   return (
     <Top>      
-      <Link to="/"><img src={Logo} alt="Logo" /></Link>
-      {selectCity ? <Link to="/hospedagens">Consultar hospedagens</Link> : <></>}
+      <Link to="/" onClick={() => setSelectCity(1)}><img src={Logo} alt="Logo" /></Link>
+      {/* {selectCity ? <Link to="/hospedagens">Hotéis</Link> : <></>}  */}
     </Top>
   )
 }
