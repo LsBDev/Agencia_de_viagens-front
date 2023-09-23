@@ -12,13 +12,16 @@ export default function Home() {
   const [cities, setCities] = useState([])
   const {setSelectCity} = useContext(CityContext)
   const navigate = useNavigate()
-
+  
   useEffect(() => {
-    // const url = `${process.env.REACT_APP_API_URL}/`
-    const url = "https://freela-api-lrnc.onrender.com/"
-    const promise = axios.get(url)
-    promise
-    .then((res) => setCities(res.data))
+    const url = process.env.REACT_APP_API_URL;
+    console.log(url)
+
+    axios.get(`${url}/`)
+    .then((res) => {
+      console.log(res.data)
+      setCities(res.data)
+    })
     .catch((err) => console.log(err))
   }, [])
 
@@ -26,9 +29,10 @@ export default function Home() {
     event.preventDefault()    
     navigate("/passagens")
   }
-  if(cities === []) {
-    return console.log("Loading...")
-  }
+
+  // if(cities.length === 0) {
+  //   return console.log("Loading...")
+  // }
 
   return (
     <Container>
