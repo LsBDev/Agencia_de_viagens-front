@@ -10,17 +10,18 @@ import bg1 from "../../assets/bg1.jpeg"
 
 export default function Home() {
   const [cities, setCities] = useState([])
-  const {setSelectCity} = useContext(CityContext)
+  const {setSelectCity, setCity} = useContext(CityContext)
   const navigate = useNavigate()
   
   useEffect(() => {
     const url = process.env.REACT_APP_API_URL;
-    console.log(url)
 
     axios.get(`${url}/`)
     .then((res) => {
       console.log(res.data)
       setCities(res.data)
+      setCity(undefined)
+
     })
     .catch((err) => console.log(err))
   }, [])
@@ -30,9 +31,6 @@ export default function Home() {
     navigate("/passagens")
   }
 
-  // if(cities.length === 0) {
-  //   return console.log("Loading...")
-  // }
 
   return (
     <Container>

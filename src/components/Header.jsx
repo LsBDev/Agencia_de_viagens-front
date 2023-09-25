@@ -6,11 +6,11 @@ import CityContext from "../context/city.context"
 
 
 export default function Header() {
-  const {selectCity, setSelectCity} = useContext(CityContext)
+  const {city, setSelectCity} = useContext(CityContext)
   return (
     <Top>      
       <Link to="/" onClick={() => setSelectCity(1)}><img src={Logo} alt="Logo" /></Link>
-      {/* {selectCity ? <Link to="/hospedagens">Hotéis</Link> : <></>}  */}
+      {city ? <Link to="/">Página Inicial</Link> : <></>} 
     </Top>
   )
 }
@@ -28,6 +28,6 @@ const Top = styled.header`
   padding: 5px 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   img {
-    width: 120px;
+    width: 150px;
   }
 `

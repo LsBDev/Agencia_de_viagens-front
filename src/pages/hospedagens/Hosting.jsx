@@ -9,7 +9,7 @@ import bg3 from "../../assets/bg3.jpg"
 
 
 export default function Hosting() {
-  const {selectCity, setSelectHosting} = useContext(CityContext)
+  const {selectCity, setSelectHosting, city} = useContext(CityContext)
   const navigate = useNavigate()
   const [hosting, setHosting] = useState([])
   const [minPrice, setMinPrice] = useState()
@@ -42,6 +42,8 @@ export default function Hosting() {
     <Container>
     <Background src={bg3} alt="Recepção" />
     <Sidebar  minPrice={minPrice} maxPrice={maxPrice} setPriceRange={setPriceRange} />
+    <AvailableTickets>
+        <Title>{city?.name}</Title>
     <Main>
     {
       hosting?.map((item, index) => {
@@ -57,6 +59,7 @@ export default function Hosting() {
       })
     }
     </Main>
+    </AvailableTickets>
     </Container>
   )
 }
@@ -67,21 +70,36 @@ const Container = styled.div`
   padding-top: 105px;
 `
 const Background = styled.img`
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   opacity: 80%;
-  position: absolute;
   z-index: -2;
+`
+const AvailableTickets = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 256px;
+  margin: auto;
+`
+const Title = styled.h1`
+  width: 100%;
+  margin-top: 100px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 90px;
+  color: white;
 `
 const Main =styled.div`
   width: 100%;
-  height: 100vh;
   display: flex;
-  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  /* padding: 100px 50px; */
-  justify-content: space-around;
+  gap: 30px;
+  padding-top: 50px;
+  margin: auto;
+  padding: 100px;
 `
 const Product = styled.div`
   display: flex;

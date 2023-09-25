@@ -10,12 +10,11 @@ import dayjs from "dayjs"
 
 
 export default function Tickets() {
-  const {selectCity, setFlight} = useContext(CityContext)
+  const {selectCity, setFlight, city, setCity} = useContext(CityContext)
   const [tickets, setTickets] = useState([])
   const [minPrice, setMinPrice] = useState()
   const [maxPrice, setMaxPrice] = useState()
   const [priceRange, setPriceRange] = useState()
-  const [city, setCity] = useState()
 
   const navigate = useNavigate()
 
@@ -25,7 +24,6 @@ export default function Tickets() {
     // const url = `https://freela-api-lrnc.onrender.com/fly/city/${selectCity}`
     axios.get(url2)
     .then((res) => {
-      // console.log(res.data)
       setCity(res.data.find((city) => city.id == selectCity))
     })
     .catch((err) => {
@@ -73,7 +71,7 @@ export default function Tickets() {
           )}
         </Main>
         <Hotels>
-          {selectCity ? <Link to="/hospedagens">Hoteis</Link> : <></>}
+          {selectCity ? <Link to="/hospedagens">Hotéis</Link> : <></>}
           <img src={hotel} alt="hotelzinho" />
         </Hotels>
       </AvailableTickets>
@@ -101,7 +99,6 @@ const AvailableTickets = styled.div`
   flex-direction: column;
   padding-left: 256px;
   margin: auto;
-
 `
 const Hotels = styled.div`
   display: flex;
@@ -113,7 +110,7 @@ const Hotels = styled.div`
   }
   a {
     font-size: 30px;
-    color:  hsl(20, 100%, 20%);
+    color:  white;
   }
 `
 const Title = styled.h1`
@@ -122,7 +119,7 @@ const Title = styled.h1`
   text-align: center;
   font-weight: bolder;
   font-size: 90px;
-  color: rgb(102, 34, 0);
+  color: white;
 `
 const Main =styled.div`
   width: 100%;

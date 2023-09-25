@@ -14,9 +14,10 @@ function App() {
   const [selectCity, setSelectCity] = useState(1)
   const [selectHosting, setSelectHosting] = useState()
   const [flight, setFlight] = useState({})
+  const [city, setCity] = useState()
 
   return (
-    <CityContext.Provider value={{ selectCity, setSelectCity, setFlight, flight, selectHosting, setSelectHosting }}>
+    <CityContext.Provider value={{ selectCity, setSelectCity, setFlight, flight, selectHosting, setSelectHosting, city, setCity }}>
       <BrowserRouter>
         <Header/>
         <Routes>

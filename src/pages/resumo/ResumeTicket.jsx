@@ -2,9 +2,11 @@ import { useContext } from "react"
 import CityContext from "../../context/city.context"
 import styled from "styled-components"
 import poltrona from "../../assets/Poltronas.jpeg"
+import hotel from "../../assets/Hotel.png"
+import { Link } from "react-router-dom"
 
 export default function ResumeTicket() {
-  const {flight} = useContext(CityContext)
+  const {flight, selectCity} = useContext(CityContext)
 
   return (
     <Container>
@@ -19,6 +21,8 @@ export default function ResumeTicket() {
         <p>Preço: R$ {flight.price},00</p>
       </Resume>      
     {/* <Link to="/hospedagens">Consultar hospedagens</Link> */}
+      {selectCity ? <Link to="/hospedagens">Consultar Hotéis</Link> : <></>}
+      <img src={hotel} alt="hotelzinho" />
     </Container>
   )
 }
