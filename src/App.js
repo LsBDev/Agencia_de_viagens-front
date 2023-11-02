@@ -14,7 +14,7 @@ function App() {
   const [selectCity, setSelectCity] = useState(1)
   const [selectHosting, setSelectHosting] = useState()
   const [flight, setFlight] = useState({})
-  const [city, setCity] = useState()
+  const [city, setCity] = useState(1)
 
   return (
     <CityContext.Provider value={{ selectCity, setSelectCity, setFlight, flight, selectHosting, setSelectHosting, city, setCity }}>

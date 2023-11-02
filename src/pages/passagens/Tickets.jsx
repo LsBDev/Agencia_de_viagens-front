@@ -24,7 +24,7 @@ export default function Tickets() {
     // const url = `https://freela-api-lrnc.onrender.com/fly/city/${selectCity}`
     axios.get(url2)
     .then((res) => {
-      setCity(res.data.find((city) => city.id == selectCity))
+      setCity(res.data.find((city) => city.id === selectCity))
     })
     .catch((err) => {
       console.log(err.response.data)
@@ -40,7 +40,7 @@ export default function Tickets() {
       setTickets(res.data)   
     })
     .catch((err) => console.log(err))
-  }, [selectCity])
+  }, [setCity, selectCity])
 
   function selectTicket(item) {
     setFlight(item)
@@ -55,13 +55,13 @@ export default function Tickets() {
         <Title>{city?.name}</Title>
         <Main>
           {tickets.map((item, index) => {
-            const data = item.flight_date
-            const dataFormatada = dayjs(data).format('YYYY/MM/DD')
+            const date = item.flight_date
+            const dateFormated = dayjs(date).format('YYYY/MM/DD')
             if(item.price <= priceRange) {
               return (
                 <Product key={index} onClick={() => selectTicket(item)}>
                   <img src={aviao} alt="Avião" />
-                  <p><span>DATA</span>: {dataFormatada}</p>
+                  <p><span>DATA</span>: {dateFormated}</p>
                   <p><span>COMPANHIA</span>: {item.company}</p>
                   <p><span>DESTINO</span>: {item.destination_city}</p>
                   <p><span>PREÇO</span>: R$ {item.price},00</p>
@@ -84,6 +84,12 @@ const Container = styled.div`
   display: flex;
   padding-top: 105px;
   height: 100vh;
+  @media (max-width: 800px) {
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+    /* align-items: center; */
+  }
 `
 const Background = styled.img`
   position: fixed;
@@ -99,6 +105,11 @@ const AvailableTickets = styled.div`
   flex-direction: column;
   padding-left: 256px;
   margin: auto;
+  /* background: #000; */
+  @media (max-width: 800px) {
+    width: 100%;
+    padding: 50px 0 0 0;
+  }
 `
 const Hotels = styled.div`
   display: flex;

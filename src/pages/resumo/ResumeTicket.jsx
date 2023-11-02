@@ -4,6 +4,7 @@ import styled from "styled-components"
 import poltrona from "../../assets/Poltronas.jpeg"
 import hotel from "../../assets/Hotel.png"
 import { Link } from "react-router-dom"
+import Colors from "../../styles/Colors"
 
 export default function ResumeTicket() {
   const {flight, selectCity} = useContext(CityContext)
@@ -33,7 +34,8 @@ const Container = styled.div`
   flex-direction: column;
   margin-top: 80px;
   padding: 60px;
-  background:  #ff520de8;
+  background: ${Colors.primaryColor[1]};
+  color: hsl(17.355371900826448, 100%, 52.54901960784314%);
   h1 {
     font-size: 40px;
     margin: 50px;
@@ -51,8 +53,8 @@ const Resume = styled.div`
   gap: 20px;
   /* height: 300px; */
   padding: 25px;
-  background: white;
-  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
+  background: ${Colors.white[1]};
+  box-shadow: 3px 3px 2px ${Colors.black[4]};
   img {
     width: 400px;
   }
@@ -60,6 +62,6 @@ const Resume = styled.div`
     font-size: 20px;
     font-weight: 500;
     width: 100%;
-    color: hsl(20, 100%, 20%);
+    color: ${Colors.secondaryColor};
   }
 `

@@ -1,15 +1,27 @@
 import styled from "styled-components"
+import Colors from "../styles/Colors"
 
 export default function Sidebar({minPrice, maxPrice, setPriceRange}) {
 
   return (
     <Side>
-      <label for="min"><p>Filtro de Preços</p></label>
-      <Range>
-        <p>{minPrice},00</p>          
-        <input className="slider" type="range" min={minPrice} max={maxPrice} id="min" onChange={e => setPriceRange(e.target.value)}/>
-        <p>{maxPrice},00</p>
-      </Range>
+      <p>Filtros</p>
+      <RangeContainer>
+        <h2>Mínimo</h2>
+        <Range>
+          <p>{minPrice},00</p>          
+          <input className="slider" type="range" min={minPrice} max={maxPrice} id="min" onChange={e => setPriceRange(e.target.value)}/>
+          <p>{maxPrice},00</p>
+        </Range>
+      </RangeContainer>
+      {/* <RangeContainer>
+        <h2>Máximo</h2>
+        <Range>
+          <p>{minPrice},00</p>          
+          <input className="slider" type="range" min={minPrice} max={maxPrice} id="min" onChange={e => setPriceRange(e.target.value)}/>
+          <p>{maxPrice},00</p>
+        </Range>
+      </RangeContainer> */}
     </Side>
   )
 }
@@ -18,15 +30,28 @@ const Side = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 20px;
   height: 100%;
-  background: rgba(255, 82, 13, 0.90);
-  padding: 100px 20px;
+  background: ${Colors.primaryColor[2]};
+  padding: 50px 20px;
   border: 1px solid black;
-  label {
+  @media (max-width: 800px) {
     width: 100%;
-    font-size: 20px;
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-between;
+    background: ${Colors.primaryColor[1]};
+    p {
+      margin: auto 0;
+    }
+  }
+`
+const RangeContainer = styled.div`
+  margin: auto;
+  h2 {
     text-align: center;
-    line-height: 50px;
+    padding: 2px;
   }
 `
 const Range = styled.div`
@@ -36,9 +61,12 @@ const Range = styled.div`
   p {
     font-size: 12px;
   }
+  @media (max-width: 800px) {
+    margin: auto 0;
+  }
   .slider {
   -webkit-appearance: none;
-  background: white;
+  background: ${Colors.white[1]};
   outline: none;
   opacity: 0.7;
   height: 7px;
@@ -54,14 +82,14 @@ const Range = styled.div`
   appearance: none;
   width: 16px;
   aspect-ratio: 1/1;
-  background: hsl(20, 100%, 20%);
+  background: ${Colors.secondaryColor};
   border-radius: 50%;
   cursor: pointer;
 }
 .slider::-moz-range-thumb {
   width: 16px;
   aspect-ratio: 1/1;
-  background: hsl(20, 100%, 20%);
+  background: ${Colors.secondaryColor};
   border-radius: 50%;
   cursor: pointer;
 }

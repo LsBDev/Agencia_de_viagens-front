@@ -1,9 +1,10 @@
 import styled from "styled-components"
+import Colors from "../../styles/Colors"
 
-export default function Instruction({text}) {
+export default function Instruction({children}) {
   return (
     <Container>
-      <p>{text}</p>
+      {children}
     </Container>
   )
 }
@@ -12,17 +13,18 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 50%; */
   height: 100%;
   max-width: 250px;
-  /* max-height: 200px; */
   padding: 20px;
-  border: 1px solid #ff530d;
-  /* border-radius: 10px; */
-  background: #ff530d;
+  border: 1px solid ${Colors.primaryColor[1]};
+  background: ${Colors.primaryColor[1]};
   opacity: 95%;
   p {    
     text-align: center;
     opacity: 100%;
+  }
+  @media (max-width: 780px) {
+    min-width: 100%;
+    height: 90px;
   }
 `

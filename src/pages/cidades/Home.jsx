@@ -5,6 +5,7 @@ import CityContext from "../../context/city.context"
 import { useNavigate } from "react-router-dom"
 import Instruction from "./Intructions"
 import bg1 from "../../assets/bg1.jpeg"
+import Colors from "../../styles/Colors"
 
 
 
@@ -24,7 +25,7 @@ export default function Home() {
 
     })
     .catch((err) => console.log(err))
-  }, [])
+  }, [setCity])
 
   function getCity(event) {
     event.preventDefault()    
@@ -37,9 +38,15 @@ export default function Home() {
       <img src={bg1} alt="Resort"/>
       <Form onSubmit={getCity}>
         <Orientation>
-          <Instruction text="Escolha a cidade que deseja visitar"/>
-          <Instruction text="Consulte as passagens disponíveis, com preço e datas"/>
-          <Instruction text="Consulte hospedagens e todo o conforto que eles oferecem"/>
+          <Instruction>
+            <p>Escolha a cidade</p>
+          </Instruction> 
+          <Instruction>
+            <p>Consulte as passagens</p>
+          </Instruction> 
+          <Instruction>
+            <p>Consulte hospedagens</p>
+          </Instruction> 
         </Orientation>
         <Select onChange={e => setSelectCity(e.target.value)}>
           <optgroup label="Cidades"></optgroup>
@@ -63,9 +70,10 @@ const Container = styled.div`
   img {
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: 140%;
     position: absolute;
     z-index: -2;
+    min-width: 375px;
   }
 `
 const Form = styled.form`
@@ -80,10 +88,10 @@ const Form = styled.form`
     border: none;
     border-radius: 10px;
     padding: 10px 0;
-    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
-    background-color: #ff530d;
+    box-shadow: 3px 3px 2px ${Colors.black[4]};
+    background-color: ${Colors.primaryColor[1]};
     :hover {
-      background-color: hsl(17.355371900826448, 100%, 40%);
+      background-color:  ${Colors.primaryColor[3]};
       cursor: pointer;
     }
   }
@@ -95,10 +103,17 @@ const Select = styled.select`
   font-style: italic;
   opacity: 80%;
   font-size: 20px;
+  min-width: 250px;
 `
 const Orientation = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 0 30px;
+  min-width: 250px;
   gap: 30px;
+  @media (max-width: 780px) {
+    flex-direction: column;
+    margin-top: 120px;
+  }
 `
