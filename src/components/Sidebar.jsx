@@ -10,6 +10,7 @@ export default function Sidebar({minPrice, maxPrice, setPriceRange}) {
         <h2>Mínimo</h2>
         <Range>
           <p>{minPrice},00</p>          
+          
           <input className="slider" type="range" min={minPrice} max={maxPrice} id="min" onChange={e => setPriceRange(e.target.value)}/>
           <p>{maxPrice},00</p>
         </Range>
